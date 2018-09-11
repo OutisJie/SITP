@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Router, BrowserRouter, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
 const Page = ({ title }) => (
   <div className="App">
-    <header className="App-header">
+    {/* <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <h2>{title}</h2>
-    </header>
+    </header> */}
     <p className="App-intro">
       this is the {title} page.
     </p>
@@ -40,9 +40,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/setting" component={Settings}/>
+        <div>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/settings" component={Settings}/>
+        </div>
       </Router>
     );
   }
