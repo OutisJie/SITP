@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
+import Login from './page/login';
 
 const Page = ({ title }) => (
   <div className="App">
@@ -17,8 +17,7 @@ const Page = ({ title }) => (
     <p>
       <Link to="/settings">Settings</Link>
     </p>
-
-    
+    <Login/>
   </div>
 );
 
