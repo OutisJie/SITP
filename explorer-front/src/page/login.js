@@ -33,6 +33,11 @@ class Login extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         console.log("value", this.state)
+        fetch('http://127.0.0.1')
+        .then(res => res.json)
+        .then(res => {
+            console.log(res);
+        })
     }
 
     render() {
