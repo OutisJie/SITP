@@ -1,46 +1,22 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch} from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+// BrowserRouter基于h5,HashRouter是浏览器解析路由
 import './App.css';
 import Login from './page/login';
+import Home from './page/home';
+import Header from './component/header';
 
-const Page = ({ title }) => (
-  <div className="App">
-    <h1 className="App-intro">
-      this is the {title} page.
-    </h1>
-    <p>
-      <Link to="/">Home</Link>
-    </p>
-    <p>
-      <Link to="/about">About</Link>
-    </p>
-    <p>
-      <Link to="/settings">Settings</Link>
-    </p>
-    <Login/>
-  </div>
-);
-
-const Home = (props) => (
-  <Page title="Home"/>
-);
-
-const About = (props) => (
-  <Page title="About"/>
-);
-
-const Settings = (props) => (
-  <Page title="Settings"/>
-);
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/about" component={About}/>
-          <Route exact path="/settings" component={Settings}/>
+          <Header/>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/home" component={Home}/>
+          {/* <Route exact path="/settings" component={Settings}/> */}
         </div>
       </Router>
     );

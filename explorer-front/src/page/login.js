@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import './login.css';
+import {userUrl} from '../utils/api';
+import request from '../utils/request';
 
 class Login extends React.Component {
     constructor(props) {
@@ -32,11 +34,25 @@ class Login extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        console.log("url", userUrl.login)
         console.log("value", this.state)
-        fetch('http://127.0.0.1')
-        .then(res => res.json)
+
+        request(userUrl.login, "POST", this.state)
         .then(res => {
-            console.log(res);
+            console.log("res", res)
+        },  rej => {
+            console.log("rej", rej)
+        }).catch(e => {
+            console.log("e", e)
+        })
+
+        request(userUrl.test, "GET")
+        .then(res => {
+            console.log("res", res)
+        },  rej => {
+            console.log("rej", rej)
+        }).catch(e => {
+            console.log("e", e)
         })
     }
 
