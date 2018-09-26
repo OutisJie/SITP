@@ -17,7 +17,7 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-
+        // if(localStorage.getItem('token')) this.goHome();
     }
 
     componentWillUnmount() {
@@ -32,23 +32,16 @@ class Login extends React.Component {
         this.setState({password: e.target.value});
     }
 
+    goHome(){
+        this.props.history.push('/'); 
+    }
+
     handleSubmit(e){
         e.preventDefault();
-        console.log("url", userUrl.login)
-        console.log("value", this.state)
-
         request(userUrl.login, "POST", this.state)
         .then(res => {
-            console.log("res", res)
-        },  rej => {
-            console.log("rej", rej)
-        }).catch(e => {
-            console.log("e", e)
-        })
-
-        request(userUrl.test, "GET")
-        .then(res => {
-            console.log("res", res)
+            localStorage.setItem('token', res.data.token);
+            this.goHome();
         },  rej => {
             console.log("rej", rej)
         }).catch(e => {

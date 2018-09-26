@@ -1,5 +1,7 @@
 import React from 'react';
 import './header.css'
+import {NavLink} from 'react-router-dom';
+
 class HEADER extends React.Component{
     constructor(props){
         super();
@@ -11,10 +13,9 @@ class HEADER extends React.Component{
     render(){
         return(
             <header>
-                <div>
-                    
-                </div>
                 <span>Exporer</span>
+                <NavLink exact to="/login" activeClassName="active-link">Login</NavLink>
+                <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
                 <div>
                     {this.state.isLogin? <a>你好</a>:<a>请登录</a>}
                 </div>

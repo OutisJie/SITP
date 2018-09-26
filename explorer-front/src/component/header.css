@@ -9,5 +9,13 @@ header{
 
 header span{
     color: #ffffff;
+}
 
+header a{
+    text-decoration: none;
+    color: #fff;
+}
+
+header .active-link{
+    color: #1EAEDB;
 }
