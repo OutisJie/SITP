@@ -1,7 +1,6 @@
-"use strict"
-const _ = require('lodash');
+import _ from 'lodash';
 
-module.exports = function () {
+export default function () {
     var element = document.createElement('h1');
     element.innerHTML = _.join(['hello', 'webpack', 'webpack-dev-server'], ' ');
     return element;
