@@ -2,19 +2,25 @@
   "name": "fullstack",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --progress --colors --hot--open",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "OutisJie",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
+    "lodash": "^4.17.11",
     "mongodb": "^3.1.6",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
-    "webpack": "^4.19.1"
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
   }
 }
