@@ -19,4 +19,4 @@ class USERURL extends API{
     }
 }
 
-export const userUrl = new USERURL();
+export const UserUrl = new USERURL();
