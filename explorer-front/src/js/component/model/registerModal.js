@@ -1,6 +1,6 @@
 import React from "react";
 import RegisterView from "../view/registerView";
-import UserUrl from "../../utils/api";
+import {UserUrl} from "../../utils/api";
 import Request from "../../utils/request";
 
 export default class Register extends React.Component{

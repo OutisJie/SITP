@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const RegisterView = (email, newname, newpwd, confirmpwd, handleEmail, handleNewName, handleNewPwd, handleConfirm, handleSubmit) => (
     <form id="register" onSubmit={handleSubmit}>

@@ -17,7 +17,10 @@ class Login extends React.Component {
 
         //binding is necessary unless you use arrow function
         this.handleChange = this.handleChange.bind(this);
+        this.handlechange2 = this.handlechange2.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeView = this.changeView.bind(this);
     }
 
     componentDidMount() {
