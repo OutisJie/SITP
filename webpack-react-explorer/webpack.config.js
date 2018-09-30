@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
     entry: {
         app: './src/index.js'
     },
@@ -18,13 +17,22 @@ module.exports = {
         new CleanWebpackPlugin(['build']),
         //自动生成index.html
         new HtmlWebpackPlugin({
-            title: 'Explorer'
+            template: "./public/index.html",
+            filename: "./index.html"
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
     module: {
         rules: [
+            {
+                test: /\.html$/,
+                include: /public/,
+                use: [
+                    "html-loader"
+                ]
+
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
