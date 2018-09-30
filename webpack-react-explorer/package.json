@@ -1,12 +1,12 @@
 {
-  "name": "fullstack",
+  "name": "webpack-react-exporer",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --open",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "OutisJie",
@@ -16,13 +16,19 @@
     "lodash": "^4.17.11",
     "mongodb": "^3.1.6",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",

@@ -6,10 +6,9 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'development',
     entry: {
-        app: './src/index.js',
-        // print: './src/print.js'
+        app: './src/index.js'
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: './build',
         hot: true
@@ -19,7 +18,7 @@ module.exports = {
         new CleanWebpackPlugin(['build']),
         //自动生成index.html
         new HtmlWebpackPlugin({
-            title: 'Webpack'
+            title: 'Explorer'
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
