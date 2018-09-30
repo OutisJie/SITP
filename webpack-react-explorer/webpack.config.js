@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         app: './src/index.js'
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
         contentBase: './build',
         hot: true
