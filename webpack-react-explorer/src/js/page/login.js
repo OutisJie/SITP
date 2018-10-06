@@ -32,11 +32,19 @@ class Login extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({userName: e.target.value});
+        let data = {
+            userName: e.target.value,
+            password: this.state.user.password
+        }
+        this.setState({user: data});
     }
 
     handlechange2(e) {
-        this.setState({password: e.target.value});
+        let data = {
+            userName: this.state.user.userName,
+            password: e.target.value
+        }
+        this.setState({user: data});
     }
 
     goHome(){
@@ -45,7 +53,7 @@ class Login extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        Request(UserUrl.login, "POST", this.state)
+        Request(UserUrl.login, "POST", this.state.user)
         .then(res => {
             localStorage.setItem('token', res.data.token);
             this.goHome();
@@ -65,15 +73,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login">
                 {
                     this.state.currentView === "Login" ? 
                         <form className="login-form" onSubmit={this.handleSubmit}>
-                            <label htmlFor="name">Name</label>
-                            <input type="text" id="name" className="u-full-width" value={this.state.userName} onChange={this.handleChange}></input>
-                            <label htmlFor="password">password</label>
-                            <input type="password" id="password" className="u-full-width" value={this.state.password} onChange={(e) => this.handlechange2(e)}></input>
-                            <button className="button-primary">login</button>
+                            <label htmlFor="name">用户名</label>
+                            <input type="text" id="name" className="u-full-width" value={this.state.user.userName} onChange={this.handleChange}></input>
+                            <label htmlFor="password">密码</label>
+                            <input type="password" id="password" className="u-full-width" value={this.state.user.password} onChange={(e) => this.handlechange2(e)}></input>
+                            <button className="button-primary">登录</button>
                         </form>
                         :
                         this.state.currentView === "Register" ? <Register/>:null
